@@ -4,6 +4,13 @@
   "y": 0,
   "uniqueID": "id-21876",
   "name": "WetLink",
+  "ioValues": [
+    {
+      "name": "BulkheadThickness",
+      "ioValue": 0.5,
+      "currentEquation": "0.5"
+    }
+  ],
   "topLevel": true,
   "allAtoms": [
     {
@@ -20,8 +27,8 @@
     },
     {
       "atomType": "Import",
-      "x": 0.23984375,
-      "y": 0.3831168831168831,
+      "x": 0.2453125,
+      "y": 0.3068181818181818,
       "uniqueID": "id-21882",
       "fileName": "WLP-M10-4.5MM-PUBLIC.step",
       "name": "Import",
@@ -172,6 +179,293 @@
         "costUSD": 13,
         "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
       }
+    },
+    {
+      "atomType": "Rotate",
+      "x": 0.58125,
+      "y": 0.3717532467532467,
+      "uniqueID": "id-21908",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "x-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "y-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "z-axis degrees",
+          "ioValue": -90,
+          "currentEquation": "-90"
+        }
+      ]
+    },
+    {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.3344155844155844,
+      "uniqueID": "id-21914",
+      "name": "BulkheadThickness"
+    },
+    {
+      "atomType": "Import",
+      "x": 0.22734374999999998,
+      "y": 0.7191558441558442,
+      "uniqueID": "id-21917",
+      "fileName": "WL-M10-NUT-PUBLIC.STEP",
+      "name": "Import",
+      "type": "STEP",
+      "repoOwner": "tristan-huber",
+      "repoName": "WetLink",
+      "SVGwidth": 10
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.3890625,
+      "y": 0.7775974025974026,
+      "uniqueID": "id-21919",
+      "name": "Scale",
+      "ioValues": [
+        {
+          "name": "Scale Factor",
+          "ioValue": 0.03937007874015748
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-21920",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-21921",
+          "name": "Geometry",
+          "type": "number"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.24615384615384617,
+          "uniqueID": "id-21922",
+          "name": "Scale Factor",
+          "type": "number"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.4226190476190476,
+          "y": 0.25139664804469275,
+          "uniqueID": "id-21923",
+          "ioValues": [
+            {
+              "name": "inputShape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "scaleFactor",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": " \n      //Inputs:[inputShape, scaleFactor]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n\n      let scaledShape = await Scale(inputShape, scaleFactor);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [scaledShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      return shape1\n      \n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "inputShape",
+          "ap1ID": "id-21921",
+          "ap2ID": "id-21923"
+        },
+        {
+          "ap2Name": "scaleFactor",
+          "ap1ID": "id-21922",
+          "ap2ID": "id-21923"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-21923",
+          "ap2ID": "id-21920"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-07-08T18:23:39.120Z",
+        "privateRepo": false,
+        "repoName": "Scale",
+        "dateCreated": "2025-06-26T17:06:11Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/README.md?sanitize=true",
+        "yyyy": 2025,
+        "topMoleculeID": "4b6bc40a-44a9-438a-9ed9-ba4910815d8d",
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/BarbourSmith/Scale",
+        "topics": [],
+        "parentRepo": null,
+        "forks": 1,
+        "dateModified": "739428",
+        "ranking": 5.3,
+        "searchField": "scale barboursmith scales the input 2d or 3d geometry by the scale factor ",
+        "owner": "BarbourSmith",
+        "description": "Scales the input 2D or 3D geometry by the scale factor",
+        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Unitless",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1783558088086
+    },
+    {
+      "atomType": "Move",
+      "x": 0.5125000000000001,
+      "y": 0.8262987012987012,
+      "uniqueID": "id-21935",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0.09999999999999998,
+          "currentEquation": "0.6 - BulkheadThickness"
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "Fusion",
+      "x": 0.69296875,
+      "y": 0.7224025974025975,
+      "uniqueID": "id-21941",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": {
+            "geometry": [
+              {
+                "geometry": "move-f56d8848-{\"geometry\":\"import-step-853c25600fa8d9d5c8488346d6685f2aeea4dad4ee52f149dec5dc2f9ea57ee1\",\"tags\":[],\"color\":\"#aad7f2\",\"bom\":[],\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}}-0.03937007874015748-1-0.09999999999999998-0-0",
+                "tags": [],
+                "color": "#aad7f2",
+                "bom": [],
+                "dimension": "3D",
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            ],
+            "plane": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "xDir": [
+                1,
+                0,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            },
+            "color": "#aad7f2",
+            "tags": [],
+            "bom": [],
+            "nonReplicadSerialized": {}
+          }
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": {
+            "geometry": [
+              {
+                "geometry": "rotate-f56d8848-{\"geometry\":\"import-step-1ed3cef5ad568330eb978bd419da8fc0a59aae9a3a19982d914d4a6f0aa93156\",\"tags\":[],\"color\":\"#aad7f2\",\"bom\":[],\"dimension\":\"3D\",\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}}-0.03937007874015748-1-0-0--90",
+                "tags": [],
+                "color": "#aad7f2",
+                "bom": [],
+                "dimension": "3D",
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            ],
+            "plane": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "xDir": [
+                1,
+                0,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            },
+            "color": "#aad7f2",
+            "tags": [],
+            "bom": [],
+            "nonReplicadSerialized": {}
+          }
+        }
+      ],
+      "unionType": "Fusion"
     }
   ],
   "allConnectors": [
@@ -183,12 +477,37 @@
     {
       "ap2Name": "geometry",
       "ap1ID": "id-21889",
-      "ap2ID": "id-21901"
+      "ap2ID": "id-21908"
     },
     {
       "ap2Name": "number or geometry",
       "ap1ID": "id-21901",
       "ap2ID": "id-21877"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-21908",
+      "ap2ID": "id-21901"
+    },
+    {
+      "ap2Name": "Shape 2",
+      "ap1ID": "id-21908",
+      "ap2ID": "id-21941"
+    },
+    {
+      "ap2Name": "Geometry",
+      "ap1ID": "id-21917",
+      "ap2ID": "id-21919"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-21919",
+      "ap2ID": "id-21935"
+    },
+    {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-21935",
+      "ap2ID": "id-21941"
     }
   ],
   "unitsKey": "Inches",
