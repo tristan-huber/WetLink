@@ -149,8 +149,8 @@
         },
         {
           "name": "Item Name",
-          "ioValue": "New Item",
-          "currentEquation": "New Item"
+          "ioValue": "Wetlink penetrator M10 4.5",
+          "currentEquation": "Wetlink penetrator M10 4.5"
         },
         {
           "name": "Number Needed",
@@ -158,7 +158,7 @@
         },
         {
           "name": "Cost (USD)",
-          "ioValue": 0
+          "ioValue": 13
         },
         {
           "name": "Source Link",
@@ -167,9 +167,9 @@
         }
       ],
       "BOMitem": {
-        "BOMitemName": "New Item",
+        "BOMitemName": "Wetlink penetrator M10 4.5",
         "numberNeeded": 1,
-        "costUSD": 0,
+        "costUSD": 13,
         "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
       }
     }
@@ -184,6 +184,11 @@
       "ap2Name": "geometry",
       "ap1ID": "id-21889",
       "ap2ID": "id-21901"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-21901",
+      "ap2ID": "id-21877"
     }
   ],
   "unitsKey": "Inches",
