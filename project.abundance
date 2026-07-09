@@ -106,8 +106,8 @@
     },
     {
       "atomType": "Import",
-      "x": 0.22734374999999998,
-      "y": 0.7191558441558442,
+      "x": 0.3567662565905097,
+      "y": 0.9325,
       "uniqueID": "id-21917",
       "fileName": "WL-M10-NUT-PUBLIC.STEP",
       "name": "Import",
@@ -118,8 +118,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.5125000000000001,
-      "y": 0.8262987012987012,
+      "x": 0.6608084358523726,
+      "y": 0.8875,
       "uniqueID": "id-21935",
       "ioValues": [
         {
@@ -248,8 +248,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.3890625,
-      "y": 0.7775974025974026,
+      "x": 0.47041593438781487,
+      "y": 0.8350000000000001,
       "uniqueID": "id-21919",
       "name": "Scale",
       "ioValues": [
@@ -353,8 +353,8 @@
     },
     {
       "atomType": "Circle",
-      "x": 0.12946690099589925,
-      "y": 0.45499999999999996,
+      "x": 0.13181019332161686,
+      "y": 0.3925,
       "uniqueID": "id-21991",
       "ioValues": [
         {
@@ -366,8 +366,8 @@
     },
     {
       "atomType": "Circle",
-      "x": 0.12829525483304044,
-      "y": 0.6525,
+      "x": 0.13591095489162275,
+      "y": 0.5725,
       "uniqueID": "id-21994",
       "ioValues": [
         {
@@ -379,8 +379,8 @@
     },
     {
       "atomType": "Extrude",
-      "x": 0.39777387229056826,
-      "y": 0.54,
+      "x": 0.38605741066198007,
+      "y": 0.48750000000000004,
       "uniqueID": "id-21997",
       "ioValues": [
         {
@@ -396,8 +396,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.30404217926186294,
-      "y": 0.5449999999999999,
+      "x": 0.30169888693614527,
+      "y": 0.3875,
       "uniqueID": "id-22001",
       "ioValues": [
         {
@@ -412,8 +412,8 @@
     },
     {
       "atomType": "Color",
-      "x": 0.19449326303456355,
-      "y": 0.645,
+      "x": 0.20152314001171648,
+      "y": 0.47000000000000003,
       "uniqueID": "id-22004",
       "ioValues": [
         {
@@ -425,8 +425,8 @@
     },
     {
       "atomType": "Rotate",
-      "x": 0.5301698886936145,
-      "y": 0.5675,
+      "x": 0.6098418277680141,
+      "y": 0.64,
       "uniqueID": "id-22009",
       "ioValues": [
         {
@@ -439,12 +439,125 @@
         },
         {
           "name": "y-axis degrees",
-          "ioValue": 90,
-          "currentEquation": "90"
+          "ioValue": -90,
+          "currentEquation": "-90"
         },
         {
           "name": "z-axis degrees",
           "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "Circle",
+      "x": 0.1265377855887522,
+      "y": 0.725,
+      "uniqueID": "id-22040",
+      "ioValues": [
+        {
+          "name": "diameter",
+          "ioValue": 0.7086614173228347,
+          "currentEquation": "18/25.4"
+        }
+      ]
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.4897480960749854,
+      "y": 0.6024999999999999,
+      "uniqueID": "id-22043",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 3",
+          "ioValue": null
+        }
+      ]
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.2624487404803749,
+      "y": 0.7025,
+      "uniqueID": "id-22048",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": -0.7086614173228347,
+          "currentEquation": "-18 / 25.4"
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.7129466900995899,
+      "y": 0.6975,
+      "uniqueID": "id-22053",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0.7874015748031497,
+          "currentEquation": "20/25.4"
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.17106033977738724,
+      "y": 0.8925,
+      "uniqueID": "id-22060",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": -0.31496062992125984,
+          "currentEquation": "-8 / 25.4"
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.2823667252489748,
+      "y": 0.8875,
+      "uniqueID": "id-22066",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0.5,
+          "currentEquation": "BulkheadThickness"
         }
       ]
     }
@@ -491,9 +604,9 @@
       "ap2ID": "id-22004"
     },
     {
-      "ap2Name": "geometry",
+      "ap2Name": "Shape 1",
       "ap1ID": "id-21997",
-      "ap2ID": "id-22009"
+      "ap2ID": "id-22043"
     },
     {
       "ap2Name": "geometry",
@@ -504,6 +617,36 @@
       "ap2Name": "Shape 1",
       "ap1ID": "id-22004",
       "ap2ID": "id-22001"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22009",
+      "ap2ID": "id-22053"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22040",
+      "ap2ID": "id-22048"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22040",
+      "ap2ID": "id-22060"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22043",
+      "ap2ID": "id-22009"
+    },
+    {
+      "ap2Name": "Shape 3",
+      "ap1ID": "id-22048",
+      "ap2ID": "id-22043"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22060",
+      "ap2ID": "id-22066"
     }
   ],
   "unitsKey": "Inches",
