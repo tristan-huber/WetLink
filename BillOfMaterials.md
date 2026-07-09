@@ -2,4 +2,5 @@
 # Bill Of Materials 
  |Part|Number Needed|Price|Source| 
  |----|----------|-----|-----|
-|Total: |0|$0.00| |
+|Wetlink penetrator M10 4.5|1|$13.00|https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/|
+|Total: |1|$13.00| |
