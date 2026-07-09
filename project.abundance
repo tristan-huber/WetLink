@@ -37,109 +37,11 @@
       "SVGwidth": 10
     },
     {
-      "atomType": "Add-BOM-Tag",
-      "x": 0.6789062499999999,
-      "y": 0.42694805194805197,
-      "uniqueID": "id-21901",
-      "name": "Add BOM Tag",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Item Name",
-          "ioValue": "Wetlink penetrator M10 4.5",
-          "currentEquation": "Wetlink penetrator M10 4.5"
-        },
-        {
-          "name": "Number Needed",
-          "ioValue": 1
-        },
-        {
-          "name": "Cost (USD)",
-          "ioValue": 13
-        },
-        {
-          "name": "Source Link",
-          "ioValue": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/",
-          "currentEquation": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
-        }
-      ],
-      "BOMitem": {
-        "BOMitemName": "Wetlink penetrator M10 4.5",
-        "numberNeeded": 1,
-        "costUSD": 13,
-        "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
-      }
-    },
-    {
-      "atomType": "Rotate",
-      "x": 0.58125,
-      "y": 0.3717532467532467,
-      "uniqueID": "id-21908",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "x-axis degrees",
-          "ioValue": 0
-        },
-        {
-          "name": "y-axis degrees",
-          "ioValue": 0
-        },
-        {
-          "name": "z-axis degrees",
-          "ioValue": -90
-        }
-      ]
-    },
-    {
       "atomType": "Input",
       "x": 0.025384615384615384,
       "y": 0.15384615384615385,
       "uniqueID": "id-21914",
       "name": "BulkheadThickness"
-    },
-    {
-      "atomType": "Import",
-      "x": 0.3567662565905097,
-      "y": 0.9325,
-      "uniqueID": "id-21917",
-      "fileName": "WL-M10-NUT-PUBLIC.STEP",
-      "name": "Import",
-      "type": "STEP",
-      "repoOwner": "tristan-huber",
-      "repoName": "WetLink",
-      "SVGwidth": 10
-    },
-    {
-      "atomType": "Move",
-      "x": 0.6608084358523726,
-      "y": 0.8875,
-      "uniqueID": "id-21935",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 0.09999999999999998,
-          "currentEquation": "0.6 - BulkheadThickness"
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0
-        },
-        {
-          "name": "zDist",
-          "ioValue": 0
-        }
-      ]
     },
     {
       "atomType": "GitHubMolecule",
@@ -217,111 +119,6 @@
           "ap2Name": "number or geometry",
           "ap1ID": "id-21888",
           "ap2ID": "id-21885"
-        }
-      ],
-      "parentRepo": {
-        "lastFoundGit": "2026-07-08T18:23:39.120Z",
-        "privateRepo": false,
-        "repoName": "Scale",
-        "dateCreated": "2025-06-26T17:06:11Z",
-        "likes": 0,
-        "readMe": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/README.md?sanitize=true",
-        "yyyy": 2025,
-        "topMoleculeID": "4b6bc40a-44a9-438a-9ed9-ba4910815d8d",
-        "githubMoleculesUsed": [],
-        "html_url": "https://github.com/BarbourSmith/Scale",
-        "topics": [],
-        "parentRepo": null,
-        "forks": 1,
-        "dateModified": "739428",
-        "ranking": 5.3,
-        "searchField": "scale barboursmith scales the input 2d or 3d geometry by the scale factor ",
-        "owner": "BarbourSmith",
-        "description": "Scales the input 2D or 3D geometry by the scale factor",
-        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/project.abundance?sanitize=true",
-        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Scale/master/project.svg?sanitize=true",
-        "isLocal": false
-      },
-      "unitsKey": "Unitless",
-      "fileTypeVersion": 1,
-      "lastReloadedFromGithubAt": 1783558088086
-    },
-    {
-      "atomType": "GitHubMolecule",
-      "x": 0.47041593438781487,
-      "y": 0.8350000000000001,
-      "uniqueID": "id-21919",
-      "name": "Scale",
-      "ioValues": [
-        {
-          "name": "Scale Factor",
-          "ioValue": 0.03937007874015748
-        }
-      ],
-      "topLevel": false,
-      "allAtoms": [
-        {
-          "atomType": "Output",
-          "x": 0.98,
-          "y": 0.5,
-          "uniqueID": "id-21920",
-          "ioValues": [
-            {
-              "name": "number or geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
-          "uniqueID": "id-21921",
-          "name": "Geometry",
-          "type": "number"
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.24615384615384617,
-          "uniqueID": "id-21922",
-          "name": "Scale Factor",
-          "type": "number"
-        },
-        {
-          "atomType": "Code",
-          "x": 0.4226190476190476,
-          "y": 0.25139664804469275,
-          "uniqueID": "id-21923",
-          "ioValues": [
-            {
-              "name": "inputShape",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "scaleFactor",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "interpreterVersion": 0,
-          "code": " \n      //Inputs:[inputShape, scaleFactor]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n\n      let scaledShape = await Scale(inputShape, scaleFactor);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [scaledShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      return shape1\n      \n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
-        }
-      ],
-      "allConnectors": [
-        {
-          "ap2Name": "inputShape",
-          "ap1ID": "id-21921",
-          "ap2ID": "id-21923"
-        },
-        {
-          "ap2Name": "scaleFactor",
-          "ap1ID": "id-21922",
-          "ap2ID": "id-21923"
-        },
-        {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-21923",
-          "ap2ID": "id-21920"
         }
       ],
       "parentRepo": {
@@ -463,16 +260,20 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.4897480960749854,
-      "y": 0.6024999999999999,
+      "x": 0.5008787346221442,
+      "y": 0.5775,
       "uniqueID": "id-22043",
       "ioValues": [
         {
-          "name": "Shape 1",
+          "name": "Shape 3",
           "ioValue": null
         },
         {
-          "name": "Shape 3",
+          "name": "Shape 4",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 5",
           "ioValue": null
         }
       ]
@@ -496,8 +297,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.7129466900995899,
-      "y": 0.6975,
+      "x": 0.6859988283538372,
+      "y": 0.7475,
       "uniqueID": "id-22053",
       "ioValues": [
         {
@@ -521,8 +322,8 @@
     },
     {
       "atomType": "Extrude",
-      "x": 0.17106033977738724,
-      "y": 0.8925,
+      "x": 0.19273579379027533,
+      "y": 0.9275000000000001,
       "uniqueID": "id-22060",
       "ioValues": [
         {
@@ -531,15 +332,15 @@
         },
         {
           "name": "height",
-          "ioValue": -0.31496062992125984,
-          "currentEquation": "-8 / 25.4"
+          "ioValue": 0.31496062992125984,
+          "currentEquation": "8 / 25.4"
         }
       ]
     },
     {
       "atomType": "Move",
-      "x": 0.2823667252489748,
-      "y": 0.8875,
+      "x": 0.40246045694200355,
+      "y": 0.7599999999999999,
       "uniqueID": "id-22066",
       "ioValues": [
         {
@@ -560,6 +361,83 @@
           "currentEquation": "BulkheadThickness"
         }
       ]
+    },
+    {
+      "atomType": "Difference",
+      "x": 0.3022847100175747,
+      "y": 0.85,
+      "uniqueID": "id-22074",
+      "ioValues": [
+        {
+          "name": "retain",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "remove",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Rotate",
+      "x": 0.58125,
+      "y": 0.3717532467532467,
+      "uniqueID": "id-21908",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "x-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "y-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "z-axis degrees",
+          "ioValue": -90
+        }
+      ]
+    },
+    {
+      "atomType": "Add-BOM-Tag",
+      "x": 0.7270064440538958,
+      "y": 0.37,
+      "uniqueID": "id-21901",
+      "name": "Add BOM Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Item Name",
+          "ioValue": "Wetlink penetrator M10 4.5",
+          "currentEquation": "Wetlink penetrator M10 4.5"
+        },
+        {
+          "name": "Number Needed",
+          "ioValue": 1
+        },
+        {
+          "name": "Cost (USD)",
+          "ioValue": 13
+        },
+        {
+          "name": "Source Link",
+          "ioValue": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/",
+          "currentEquation": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
+        }
+      ],
+      "BOMitem": {
+        "BOMitemName": "Wetlink penetrator M10 4.5",
+        "numberNeeded": 1,
+        "costUSD": 13,
+        "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
+      }
     }
   ],
   "allConnectors": [
@@ -569,29 +447,9 @@
       "ap2ID": "id-21889"
     },
     {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-21901",
-      "ap2ID": "id-21877"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-21908",
-      "ap2ID": "id-21901"
-    },
-    {
-      "ap2Name": "Geometry",
-      "ap1ID": "id-21917",
-      "ap2ID": "id-21919"
-    },
-    {
       "ap2Name": "geometry",
       "ap1ID": "id-21889",
       "ap2ID": "id-21908"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-21919",
-      "ap2ID": "id-21935"
     },
     {
       "ap2Name": "Shape 2",
@@ -604,9 +462,14 @@
       "ap2ID": "id-22004"
     },
     {
-      "ap2Name": "Shape 1",
+      "ap2Name": "Shape 5",
       "ap1ID": "id-21997",
       "ap2ID": "id-22043"
+    },
+    {
+      "ap2Name": "remove",
+      "ap1ID": "id-21997",
+      "ap2ID": "id-22074"
     },
     {
       "ap2Name": "geometry",
@@ -645,8 +508,28 @@
     },
     {
       "ap2Name": "geometry",
+      "ap1ID": "id-22053",
+      "ap2ID": "id-21901"
+    },
+    {
+      "ap2Name": "retain",
       "ap1ID": "id-22060",
+      "ap2ID": "id-22074"
+    },
+    {
+      "ap2Name": "Shape 4",
+      "ap1ID": "id-22066",
+      "ap2ID": "id-22043"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-22074",
       "ap2ID": "id-22066"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-21901",
+      "ap2ID": "id-21877"
     }
   ],
   "unitsKey": "Inches",
