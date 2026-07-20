@@ -119,8 +119,7 @@
         },
         {
           "name": "y-axis degrees",
-          "ioValue": -90,
-          "currentEquation": "-90"
+          "ioValue": -90
         },
         {
           "name": "z-axis degrees",
@@ -297,6 +296,45 @@
         "costUSD": 13,
         "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
       }
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.5221354166666666,
+      "y": 0.2571428571428572,
+      "uniqueID": "id-22130",
+      "name": "Molecule",
+      "ioValues": [
+        {
+          "name": "subparts",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-22132",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.3142857142857143,
+          "uniqueID": "id-22134",
+          "name": "subparts",
+          "type": "partselect",
+          "selectedLeafIndexes": []
+        }
+      ],
+      "allConnectors": [],
+      "fileTypeVersion": 1
     }
   ],
   "allConnectors": [
