@@ -299,14 +299,18 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.5221354166666666,
-      "y": 0.2571428571428572,
+      "x": 0.5787760416666667,
+      "y": 0.26,
       "uniqueID": "id-22130",
       "name": "Molecule",
       "ioValues": [
         {
           "name": "subparts",
           "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Input",
+          "ioValue": 10
         }
       ],
       "topLevel": false,
@@ -326,11 +330,20 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.3142857142857143,
+          "y": 0.3628571428571429,
           "uniqueID": "id-22134",
           "name": "subparts",
           "type": "partselect",
-          "selectedLeafIndexes": []
+          "selectedLeafIndexes": [
+            0,
+            1
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.4551648351648352,
+          "uniqueID": "id-22196"
         }
       ],
       "allConnectors": [],
@@ -387,6 +400,11 @@
       "ap2Name": "geometry",
       "ap1ID": "id-22043",
       "ap2ID": "id-22009"
+    },
+    {
+      "ap2Name": "subparts",
+      "ap1ID": "id-22043",
+      "ap2ID": "id-22130"
     },
     {
       "ap2Name": "Shape 3",
