@@ -314,6 +314,13 @@
       ]
     },
     {
+      "atomType": "Constant",
+      "x": 0.7018229166666666,
+      "y": 0.8914285714285715,
+      "uniqueID": "id-22776",
+      "value": 10
+    },
+    {
       "atomType": "Molecule",
       "x": 0.7571614583333333,
       "y": 0.15714285714285714,
@@ -334,8 +341,7 @@
         },
         {
           "name": "radius",
-          "ioValue": 0.05,
-          "currentEquation": "0.05"
+          "ioValue": 0.05
         }
       ],
       "topLevel": false,
@@ -447,7 +453,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.5342857142857143,
+          "y": 0.3384615384615385,
           "uniqueID": "id-22646",
           "name": "edges",
           "type": "edgeselect",
@@ -460,7 +466,8 @@
             ],
             "1": [
               2,
-              3
+              3,
+              1
             ],
             "2": [],
             "3": []
@@ -478,8 +485,7 @@
             },
             {
               "name": "radius",
-              "ioValue": 0.05,
-              "currentEquation": "0.11"
+              "ioValue": 0.05
             }
           ],
           "interpreterVersion": 1,
@@ -489,7 +495,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.7837362637362637,
+          "y": 0.4307692307692308,
           "uniqueID": "id-22737",
           "name": "radius"
         }
@@ -557,7 +563,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.52,
+          "y": 0.15384615384615385,
           "uniqueID": "id-22743",
           "name": "faces",
           "type": "faceselect",
@@ -644,13 +650,6 @@
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Constant",
-      "x": 0.7018229166666666,
-      "y": 0.8914285714285715,
-      "uniqueID": "id-22776",
-      "value": 10
     }
   ],
   "allConnectors": [
@@ -760,14 +759,14 @@
       "ap2ID": "id-22130"
     },
     {
-      "ap2Name": "edges",
-      "ap1ID": "id-22740",
-      "ap2ID": "id-22130"
-    },
-    {
       "ap2Name": "xDist",
       "ap1ID": "id-22776",
       "ap2ID": "id-22053"
+    },
+    {
+      "ap2Name": "edges",
+      "ap1ID": "id-22740",
+      "ap2ID": "id-22130"
     }
   ],
   "unitsKey": "Inches",
