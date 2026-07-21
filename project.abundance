@@ -299,8 +299,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.5436197916666666,
-      "y": 0.2571428571428572,
+      "x": 0.45703124999999994,
+      "y": 0.15428571428571428,
       "uniqueID": "id-22334",
       "ioValues": [
         {
@@ -315,8 +315,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.6236979166666666,
-      "y": 0.22285714285714286,
+      "x": 0.7018229166666666,
+      "y": 0.18857142857142858,
       "uniqueID": "id-22130",
       "name": "Molecule",
       "ioValues": [
@@ -350,7 +350,9 @@
           "uniqueID": "id-22134",
           "name": "subparts",
           "type": "partselect",
-          "selectedLeafIndexes": []
+          "selectedLeafIndexes": [
+            1
+          ]
         },
         {
           "atomType": "Input",
@@ -405,6 +407,31 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Move",
+      "x": 0.60546875,
+      "y": 0.16285714285714284,
+      "uniqueID": "id-22408",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 5,
+          "currentEquation": "5"
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -499,8 +526,13 @@
       "ap2ID": "id-21877"
     },
     {
-      "ap2Name": "subparts",
+      "ap2Name": "geometry",
       "ap1ID": "id-22334",
+      "ap2ID": "id-22408"
+    },
+    {
+      "ap2Name": "subparts",
+      "ap1ID": "id-22408",
       "ap2ID": "id-22130"
     }
   ],
