@@ -327,6 +327,10 @@
         {
           "name": "faces",
           "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "edges",
+          "ioValue": "__GEOMETRY_INPUT__"
         }
       ],
       "topLevel": false,
@@ -362,9 +366,7 @@
           "name": "faces",
           "type": "faceselect",
           "selectedFaceData": {
-            "0": [
-              0
-            ],
+            "0": [],
             "1": [
               1,
               0
@@ -432,6 +434,19 @@
           "interpreterVersion": 1,
           "code": "function run(sel: Assembly) {\n  console.log(sel.getSelectedFaces())\n  const result = []\n  sel.onLeafs((leaf) => {\n    if (leaf.selection?.faces && leaf.selection.faces.length > 0) {\n      const f = leaf.geometry.faces;\n      for (const i of leaf.selection.faces) {\n        result.push(f[i])\n      }\n    }\n    return leaf;\n  })\n  return result\n}",
           "compiledCode": "\"use strict\";\nfunction run(sel) {\n    console.log(sel.getSelectedFaces());\n    const result = [];\n    sel.onLeafs((leaf) => {\n        if (leaf.selection?.faces && leaf.selection.faces.length > 0) {\n            const f = leaf.geometry.faces;\n            for (const i of leaf.selection.faces) {\n                result.push(f[i]);\n            }\n        }\n        return leaf;\n    });\n    return result;\n}\n"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.5457142857142857,
+          "uniqueID": "id-22646",
+          "name": "edges",
+          "type": "edgeselect",
+          "selectedEdgeData": {
+            "0": [
+              5
+            ]
+          }
         }
       ],
       "allConnectors": [
@@ -479,6 +494,11 @@
       "ap2Name": "remove",
       "ap1ID": "id-21997",
       "ap2ID": "id-22074"
+    },
+    {
+      "ap2Name": "edges",
+      "ap1ID": "id-21997",
+      "ap2ID": "id-22130"
     },
     {
       "ap2Name": "geometry",
