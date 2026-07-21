@@ -365,7 +365,10 @@
             "0": [
               0
             ],
-            "1": []
+            "1": [
+              1,
+              0
+            ]
           }
         },
         {
@@ -449,7 +452,7 @@
         },
         {
           "ap2Name": "number or geometry",
-          "ap1ID": "id-22487",
+          "ap1ID": "id-22568",
           "ap2ID": "id-22132"
         }
       ],
@@ -543,14 +546,14 @@
       "ap2ID": "id-22334"
     },
     {
+      "ap2Name": "faces",
+      "ap1ID": "id-22074",
+      "ap2ID": "id-22130"
+    },
+    {
       "ap2Name": "number or geometry",
       "ap1ID": "id-21901",
       "ap2ID": "id-21877"
-    },
-    {
-      "ap2Name": "faces",
-      "ap1ID": "id-22334",
-      "ap2ID": "id-22130"
     },
     {
       "ap2Name": "subparts",
