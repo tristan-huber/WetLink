@@ -142,8 +142,8 @@
     },
     {
       "atomType": "Assembly",
-      "x": 0.5676625659050967,
-      "y": 0.47500000000000003,
+      "x": 0.5345052083333334,
+      "y": 0.5542857142857143,
       "uniqueID": "id-22043",
       "ioValues": [
         {
@@ -221,8 +221,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.5166959578207381,
-      "y": 0.8925,
+      "x": 0.45768229166666663,
+      "y": 0.9228571428571428,
       "uniqueID": "id-22066",
       "ioValues": [
         {
@@ -246,8 +246,8 @@
     },
     {
       "atomType": "Difference",
-      "x": 0.3723958333333333,
-      "y": 0.8285714285714286,
+      "x": 0.36197916666666663,
+      "y": 0.8257142857142857,
       "uniqueID": "id-22074",
       "ioValues": [
         {
@@ -452,13 +452,15 @@
           "selectedEdgeData": {
             "0": [
               8,
-              1,
-              9
+              9,
+              4
             ],
             "1": [
               2,
-              4
-            ]
+              3
+            ],
+            "2": [],
+            "3": []
           }
         },
         {
@@ -478,8 +480,8 @@
             }
           ],
           "interpreterVersion": 1,
-          "code": "function run(toFillet: Assembly, radius: number) {\n  return toFillet.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    if (leaf.selection?.part) {\n      leaf.geometry = leaf.geometry.fillet(radius)\n      return leaf;\n    }\n    // else apply only to filtered faces and edges\n    let edgesToFillet: replicad.Edge[] = []\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        edgesToFillet.push(leaf.geometry.faces[faceIndex].edges)\n      });\n    }\n    console.log(edgesToFillet)\n    console.log(\"intermediate\")\n    console.log(leaf.selection)\n    if (leaf.selection?.edges) {\n      edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]))\n    }\n    if (edgesToFillet.length == 0) {\n      return leaf;\n    }\n    edgesToFillet = edgesToFillet.filter((e) => e != null)\n    console.log(edgesToFillet)\n    leaf.geometry = leaf.geometry.fillet(radius, (e) => {return e.inList(edgesToFillet.map((e) => e.clone()))})\n    return leaf;\n  })\n}",
-          "compiledCode": "\"use strict\";\nfunction run(toFillet, radius) {\n    return toFillet.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        if (leaf.selection?.part) {\n            leaf.geometry = leaf.geometry.fillet(radius);\n            return leaf;\n        }\n        // else apply only to filtered faces and edges\n        let edgesToFillet = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                edgesToFillet.push(leaf.geometry.faces[faceIndex].edges);\n            });\n        }\n        console.log(edgesToFillet);\n        console.log(\"intermediate\");\n        console.log(leaf.selection);\n        if (leaf.selection?.edges) {\n            edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]));\n        }\n        if (edgesToFillet.length == 0) {\n            return leaf;\n        }\n        edgesToFillet = edgesToFillet.filter((e) => e != null);\n        console.log(edgesToFillet);\n        leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())); });\n        return leaf;\n    });\n}\n"
+          "code": "function run(toFillet: Assembly, radius: number) {\n  return toFillet.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    if (leaf.selection?.part) {\n      leaf.geometry = leaf.geometry.fillet(radius)\n      return leaf;\n    }\n    // else apply only to filtered faces and edges\n    let edgesToFillet: replicad.Edge[] = []\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges)\n      });\n    }\n    console.log(edgesToFillet)\n    console.log(\"intermediate\")\n    console.log(leaf.selection)\n    if (leaf.selection?.edges) {\n      edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]))\n    }\n    if (edgesToFillet.length == 0) {\n      return leaf;\n    }\n    edgesToFillet = edgesToFillet.filter((e) => e != null)\n    if (edgesToFillet.length == 0) {\n      return leaf.geometry\n    }\n    console.log(edgesToFillet)\n    leaf.geometry = leaf.geometry.fillet(radius, (e) => {return e.inList(edgesToFillet.map((e) => e.clone()))})\n    return leaf;\n  })\n}",
+          "compiledCode": "\"use strict\";\nfunction run(toFillet, radius) {\n    return toFillet.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        if (leaf.selection?.part) {\n            leaf.geometry = leaf.geometry.fillet(radius);\n            return leaf;\n        }\n        // else apply only to filtered faces and edges\n        let edgesToFillet = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges);\n            });\n        }\n        console.log(edgesToFillet);\n        console.log(\"intermediate\");\n        console.log(leaf.selection);\n        if (leaf.selection?.edges) {\n            edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]));\n        }\n        if (edgesToFillet.length == 0) {\n            return leaf;\n        }\n        edgesToFillet = edgesToFillet.filter((e) => e != null);\n        if (edgesToFillet.length == 0) {\n            return leaf.geometry;\n        }\n        console.log(edgesToFillet);\n        leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())); });\n        return leaf;\n    });\n}\n"
         },
         {
           "atomType": "Input",
@@ -525,10 +527,10 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.6184895833333334,
-      "y": 0.2571428571428572,
+      "x": 0.55859375,
+      "y": 0.2714285714285714,
       "uniqueID": "id-22740",
-      "name": "Molecule",
+      "name": "FaceSelector",
       "ioValues": [
         {
           "name": "faces",
@@ -557,12 +559,9 @@
           "name": "faces",
           "type": "faceselect",
           "selectedFaceData": {
-            "0": [
-              1
-            ],
+            "0": [],
             "1": [
-              1,
-              0
+              2
             ]
           }
         },
@@ -696,6 +695,11 @@
       "ap2ID": "id-22009"
     },
     {
+      "ap2Name": "faces",
+      "ap1ID": "id-22043",
+      "ap2ID": "id-22740"
+    },
+    {
       "ap2Name": "Shape 3",
       "ap1ID": "id-22048",
       "ap2ID": "id-22043"
@@ -736,11 +740,6 @@
       "ap2ID": "id-22130"
     },
     {
-      "ap2Name": "faces",
-      "ap1ID": "id-22074",
-      "ap2ID": "id-22740"
-    },
-    {
       "ap2Name": "number or geometry",
       "ap1ID": "id-21901",
       "ap2ID": "id-21877"
@@ -752,7 +751,7 @@
     },
     {
       "ap2Name": "edges",
-      "ap1ID": "id-22334",
+      "ap1ID": "id-22740",
       "ap2ID": "id-22130"
     }
   ],
