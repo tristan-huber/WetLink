@@ -59,8 +59,8 @@
     },
     {
       "atomType": "Extrude",
-      "x": 0.32454598711189225,
-      "y": 0.4225,
+      "x": 0.322265625,
+      "y": 0.32,
       "uniqueID": "id-21997",
       "ioValues": [
         {
@@ -446,8 +446,10 @@
           "type": "edgeselect",
           "selectedEdgeData": {
             "0": [
-              3,
-              4
+              8,
+              1,
+              5,
+              0
             ]
           }
         }
