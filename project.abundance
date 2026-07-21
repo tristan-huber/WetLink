@@ -315,8 +315,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.7018229166666666,
-      "y": 0.18857142857142858,
+      "x": 0.7571614583333333,
+      "y": 0.15714285714285714,
       "uniqueID": "id-22130",
       "name": "Molecule",
       "ioValues": [
@@ -334,7 +334,8 @@
         },
         {
           "name": "radius",
-          "ioValue": 10
+          "ioValue": 0.05,
+          "currentEquation": "0.05"
         }
       ],
       "topLevel": false,
@@ -452,11 +453,11 @@
             "0": [
               8,
               1,
-              9,
-              4
+              9
             ],
             "1": [
-              2
+              2,
+              4
             ]
           }
         },
@@ -472,7 +473,7 @@
             },
             {
               "name": "radius",
-              "ioValue": 10,
+              "ioValue": 0.05,
               "currentEquation": "0.11"
             }
           ],
@@ -518,6 +519,126 @@
           "ap2Name": "radius",
           "ap1ID": "id-22737",
           "ap2ID": "id-22726"
+        }
+      ],
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.6184895833333334,
+      "y": 0.2571428571428572,
+      "uniqueID": "id-22740",
+      "name": "Molecule",
+      "ioValues": [
+        {
+          "name": "faces",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-22741",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.52,
+          "uniqueID": "id-22743",
+          "name": "faces",
+          "type": "faceselect",
+          "selectedFaceData": {
+            "0": [
+              1
+            ],
+            "1": [
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.53515625,
+          "y": 0.5228571428571429,
+          "uniqueID": "id-22744",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 10
+            },
+            {
+              "name": "y length",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.6627604166666666,
+          "y": 0.48,
+          "uniqueID": "id-22745",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Code",
+          "x": 0.2643229166666667,
+          "y": 0.15142857142857144,
+          "uniqueID": "id-22746",
+          "ioValues": [
+            {
+              "name": "sel",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(sel: Assembly) {\n  return sel.getSelectedLeafs()\n}",
+          "compiledCode": "\"use strict\";\nfunction run(sel) {\n    return sel.getSelectedLeafs();\n}\n"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.375,
+          "y": 0.7171428571428571,
+          "uniqueID": "id-22749",
+          "ioValues": [
+            {
+              "name": "toFillet",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(toFillet: Assembly, radius: number) {\n  return toFillet.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    if (leaf.selection?.part) {\n      leaf.geometry = leaf.geometry.fillet(radius)\n      return leaf;\n    }\n    // else apply only to filtered faces and edges\n    let edgesToFillet: replicad.Edge[] = []\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        edgesToFillet.push(leaf.geometry.faces[faceIndex].edges)\n      });\n    }\n    console.log(edgesToFillet)\n    console.log(\"intermediate\")\n    console.log(leaf.selection)\n    if (leaf.selection?.edges) {\n      edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]))\n    }\n    if (edgesToFillet.length == 0) {\n      return leaf;\n    }\n    edgesToFillet = edgesToFillet.filter((e) => e != null)\n    console.log(edgesToFillet)\n    leaf.geometry = leaf.geometry.fillet(radius, (e) => {return e.inList(edgesToFillet.map((e) => e.clone()))})\n    return leaf;\n  })\n}",
+          "compiledCode": "\"use strict\";\nfunction run(toFillet, radius) {\n    return toFillet.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        if (leaf.selection?.part) {\n            leaf.geometry = leaf.geometry.fillet(radius);\n            return leaf;\n        }\n        // else apply only to filtered faces and edges\n        let edgesToFillet = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                edgesToFillet.push(leaf.geometry.faces[faceIndex].edges);\n            });\n        }\n        console.log(edgesToFillet);\n        console.log(\"intermediate\");\n        console.log(leaf.selection);\n        if (leaf.selection?.edges) {\n            edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]));\n        }\n        if (edgesToFillet.length == 0) {\n            return leaf;\n        }\n        edgesToFillet = edgesToFillet.filter((e) => e != null);\n        console.log(edgesToFillet);\n        leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())); });\n        return leaf;\n    });\n}\n"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-22743",
+          "ap2ID": "id-22741"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-22744",
+          "ap2ID": "id-22745"
         }
       ],
       "fileTypeVersion": 1
@@ -613,6 +734,11 @@
       "ap2Name": "faces",
       "ap1ID": "id-22074",
       "ap2ID": "id-22130"
+    },
+    {
+      "ap2Name": "faces",
+      "ap1ID": "id-22074",
+      "ap2ID": "id-22740"
     },
     {
       "ap2Name": "number or geometry",
