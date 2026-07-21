@@ -179,8 +179,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.6859988283538372,
-      "y": 0.7475,
+      "x": 0.7565104166666666,
+      "y": 0.6285714285714286,
       "uniqueID": "id-22053",
       "ioValues": [
         {
@@ -189,7 +189,7 @@
         },
         {
           "name": "xDist",
-          "ioValue": 1.7874015748031495,
+          "ioValue": 10,
           "currentEquation": "20/25.4 + 1"
         },
         {
@@ -360,6 +360,7 @@
           "name": "subparts",
           "type": "partselect",
           "selectedLeafIndexes": [
+            0,
             1
           ]
         },
@@ -372,7 +373,8 @@
           "type": "faceselect",
           "selectedFaceData": {
             "0": [
-              1
+              1,
+              2
             ],
             "1": [
               1,
@@ -453,6 +455,7 @@
             "0": [
               8,
               9,
+              2,
               4
             ],
             "1": [
@@ -559,10 +562,10 @@
           "name": "faces",
           "type": "faceselect",
           "selectedFaceData": {
-            "0": [],
-            "1": [
-              2
-            ]
+            "0": [
+              3
+            ],
+            "1": []
           }
         },
         {
@@ -641,6 +644,13 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Constant",
+      "x": 0.7018229166666666,
+      "y": 0.8914285714285715,
+      "uniqueID": "id-22776",
+      "value": 10
     }
   ],
   "allConnectors": [
@@ -753,6 +763,11 @@
       "ap2Name": "edges",
       "ap1ID": "id-22740",
       "ap2ID": "id-22130"
+    },
+    {
+      "ap2Name": "xDist",
+      "ap1ID": "id-22776",
+      "ap2ID": "id-22053"
     }
   ],
   "unitsKey": "Inches",
