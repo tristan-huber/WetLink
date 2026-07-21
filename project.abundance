@@ -335,8 +335,7 @@
           "name": "subparts",
           "type": "partselect",
           "selectedLeafIndexes": [
-            3,
-            1
+            0
           ]
         },
         {
@@ -392,6 +391,22 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.5436197916666666,
+      "y": 0.2571428571428572,
+      "uniqueID": "id-22334",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -446,11 +461,6 @@
       "ap2ID": "id-22009"
     },
     {
-      "ap2Name": "subparts",
-      "ap1ID": "id-22043",
-      "ap2ID": "id-22130"
-    },
-    {
       "ap2Name": "Shape 3",
       "ap1ID": "id-22048",
       "ap2ID": "id-22043"
@@ -471,14 +481,29 @@
       "ap2ID": "id-22043"
     },
     {
+      "ap2Name": "Shape 2",
+      "ap1ID": "id-22066",
+      "ap2ID": "id-22334"
+    },
+    {
       "ap2Name": "geometry",
       "ap1ID": "id-22074",
       "ap2ID": "id-22066"
     },
     {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-22074",
+      "ap2ID": "id-22334"
+    },
+    {
       "ap2Name": "number or geometry",
       "ap1ID": "id-21901",
       "ap2ID": "id-21877"
+    },
+    {
+      "ap2Name": "subparts",
+      "ap1ID": "id-22334",
+      "ap2ID": "id-22130"
     }
   ],
   "unitsKey": "Inches",
