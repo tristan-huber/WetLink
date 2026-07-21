@@ -355,7 +355,7 @@
           "name": "subparts",
           "type": "partselect",
           "selectedLeafIndexes": [
-            0
+            1
           ]
         },
         {
@@ -366,7 +366,9 @@
           "name": "faces",
           "type": "faceselect",
           "selectedFaceData": {
-            "0": [],
+            "0": [
+              1
+            ],
             "1": [
               1,
               0
@@ -438,13 +440,14 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.5457142857142857,
+          "y": 0.3384615384615385,
           "uniqueID": "id-22646",
           "name": "edges",
           "type": "edgeselect",
           "selectedEdgeData": {
             "0": [
-              5
+              3,
+              4
             ]
           }
         }
