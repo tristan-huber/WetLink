@@ -298,6 +298,22 @@
       }
     },
     {
+      "atomType": "Assembly",
+      "x": 0.5436197916666666,
+      "y": 0.2571428571428572,
+      "uniqueID": "id-22334",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
+        }
+      ]
+    },
+    {
       "atomType": "Molecule",
       "x": 0.6236979166666666,
       "y": 0.22285714285714286,
@@ -334,9 +350,7 @@
           "uniqueID": "id-22134",
           "name": "subparts",
           "type": "partselect",
-          "selectedLeafIndexes": [
-            0
-          ]
+          "selectedLeafIndexes": []
         },
         {
           "atomType": "Input",
@@ -391,22 +405,6 @@
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Assembly",
-      "x": 0.5436197916666666,
-      "y": 0.2571428571428572,
-      "uniqueID": "id-22334",
-      "ioValues": [
-        {
-          "name": "Shape 1",
-          "ioValue": null
-        },
-        {
-          "name": "Shape 2",
-          "ioValue": null
-        }
-      ]
     }
   ],
   "allConnectors": [
