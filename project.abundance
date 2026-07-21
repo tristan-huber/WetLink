@@ -299,8 +299,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.5787760416666667,
-      "y": 0.26,
+      "x": 0.6236979166666666,
+      "y": 0.22285714285714286,
       "uniqueID": "id-22130",
       "name": "Molecule",
       "ioValues": [
@@ -330,23 +330,67 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.3628571428571429,
+          "y": 0.15384615384615385,
           "uniqueID": "id-22134",
           "name": "subparts",
           "type": "partselect",
           "selectedLeafIndexes": [
-            0,
+            2,
             1
           ]
         },
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.4551648351648352,
-          "uniqueID": "id-22196"
+          "y": 0.24615384615384617,
+          "uniqueID": "id-22196",
+          "type": "number"
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.53515625,
+          "y": 0.5228571428571429,
+          "uniqueID": "id-22260",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 10
+            },
+            {
+              "name": "y length",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.6627604166666666,
+          "y": 0.48,
+          "uniqueID": "id-22264",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
         }
       ],
-      "allConnectors": [],
+      "allConnectors": [
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-22260",
+          "ap2ID": "id-22264"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-22264",
+          "ap2ID": "id-22132"
+        }
+      ],
       "fileTypeVersion": 1
     }
   ],
