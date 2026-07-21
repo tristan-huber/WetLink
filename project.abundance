@@ -335,7 +335,8 @@
           "name": "subparts",
           "type": "partselect",
           "selectedLeafIndexes": [
-            3
+            3,
+            1
           ]
         },
         {
