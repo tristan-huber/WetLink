@@ -349,8 +349,8 @@
           "ioValue": "__GEOMETRY_INPUT__"
         },
         {
-          "name": "Input",
-          "ioValue": 10
+          "name": "faces",
+          "ioValue": "__GEOMETRY_INPUT__"
         }
       ],
       "topLevel": false,
@@ -381,9 +381,11 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.24615384615384617,
+          "y": 0.46,
           "uniqueID": "id-22196",
-          "type": "number"
+          "name": "faces",
+          "type": "faceselect",
+          "selectedFaceData": {}
         },
         {
           "atomType": "Rectangle",
@@ -431,6 +433,21 @@
           "interpreterVersion": 1,
           "code": "function run(sel: Assembly) {\n  return sel.getSelectedLeafs()\n}",
           "compiledCode": "\"use strict\";\nfunction run(sel) {\n    return sel.getSelectedLeafs();\n}\n"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.3014322916666667,
+          "y": 0.6742857142857143,
+          "uniqueID": "id-22568",
+          "ioValues": [
+            {
+              "name": "sel",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(sel: Assembly) {\n  console.log(sel.getSelectedFaces())\n  return sel\n}",
+          "compiledCode": "\"use strict\";\nfunction run(sel) {\n    console.log(sel.getSelectedFaces());\n    return sel;\n}\n"
         }
       ],
       "allConnectors": [
@@ -438,6 +455,11 @@
           "ap2Name": "sel",
           "ap1ID": "id-22134",
           "ap2ID": "id-22487"
+        },
+        {
+          "ap2Name": "sel",
+          "ap1ID": "id-22196",
+          "ap2ID": "id-22568"
         },
         {
           "ap2Name": "geometry",
