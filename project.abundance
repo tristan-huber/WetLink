@@ -314,30 +314,6 @@
       ]
     },
     {
-      "atomType": "Move",
-      "x": 0.60546875,
-      "y": 0.16285714285714284,
-      "uniqueID": "id-22408",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 0
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0
-        },
-        {
-          "name": "zDist",
-          "ioValue": 5
-        }
-      ]
-    },
-    {
       "atomType": "Molecule",
       "x": 0.7018229166666666,
       "y": 0.18857142857142858,
@@ -385,7 +361,12 @@
           "uniqueID": "id-22196",
           "name": "faces",
           "type": "faceselect",
-          "selectedFaceData": {}
+          "selectedFaceData": {
+            "0": [
+              0
+            ],
+            "1": []
+          }
         },
         {
           "atomType": "Rectangle",
@@ -446,8 +427,8 @@
             }
           ],
           "interpreterVersion": 1,
-          "code": "function run(sel: Assembly) {\n  console.log(sel.getSelectedFaces())\n  return sel\n}",
-          "compiledCode": "\"use strict\";\nfunction run(sel) {\n    console.log(sel.getSelectedFaces());\n    return sel;\n}\n"
+          "code": "function run(sel: Assembly) {\n  console.log(sel.getSelectedFaces())\n  const result = []\n  sel.onLeafs((leaf) => {\n    if (leaf.selection?.faces && leaf.selection.faces.length > 0) {\n      const f = leaf.geometry.faces;\n      for (const i of leaf.selection.faces) {\n        result.push(f[i])\n      }\n    }\n    return leaf;\n  })\n  return result\n}",
+          "compiledCode": "\"use strict\";\nfunction run(sel) {\n    console.log(sel.getSelectedFaces());\n    const result = [];\n    sel.onLeafs((leaf) => {\n        if (leaf.selection?.faces && leaf.selection.faces.length > 0) {\n            const f = leaf.geometry.faces;\n            for (const i of leaf.selection.faces) {\n                result.push(f[i]);\n            }\n        }\n        return leaf;\n    });\n    return result;\n}\n"
         }
       ],
       "allConnectors": [
@@ -567,13 +548,13 @@
       "ap2ID": "id-21877"
     },
     {
-      "ap2Name": "geometry",
+      "ap2Name": "faces",
       "ap1ID": "id-22334",
-      "ap2ID": "id-22408"
+      "ap2ID": "id-22130"
     },
     {
       "ap2Name": "subparts",
-      "ap1ID": "id-22408",
+      "ap1ID": "id-22334",
       "ap2ID": "id-22130"
     }
   ],
