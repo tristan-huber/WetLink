@@ -2,7 +2,7 @@
 
 # WetLink
 
-![](/project.svg)
+![](/project.png)
 
 ## Inputs
 
