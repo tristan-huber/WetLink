@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "BulkheadThickness",
-      "ioValue": 0.5
+      "ioValue": 0.6,
+      "currentEquation": "0.6"
     }
   ],
   "topLevel": true,
@@ -23,43 +24,6 @@
           "ioValue": "__GEOMETRY_INPUT__"
         }
       ]
-    },
-    {
-      "atomType": "Add-BOM-Tag",
-      "x": 0.7,
-      "y": 0.4,
-      "uniqueID": "id-21901",
-      "name": "Add BOM Tag",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Item Name",
-          "ioValue": "Wetlink penetrator M10 4.5",
-          "currentEquation": "Wetlink penetrator M10 4.5"
-        },
-        {
-          "name": "Number Needed",
-          "ioValue": 1
-        },
-        {
-          "name": "Cost (USD)",
-          "ioValue": 13
-        },
-        {
-          "name": "Source Link",
-          "ioValue": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/",
-          "currentEquation": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
-        }
-      ],
-      "BOMitem": {
-        "BOMitemName": "Wetlink penetrator M10 4.5",
-        "numberNeeded": 1,
-        "costUSD": 13,
-        "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
-      }
     },
     {
       "atomType": "Input",
@@ -244,7 +208,7 @@
         },
         {
           "name": "zDist",
-          "ioValue": 0.5,
+          "ioValue": 0.6,
           "currentEquation": "BulkheadThickness"
         }
       ]
@@ -264,14 +228,46 @@
           "ioValue": "__GEOMETRY_INPUT__"
         }
       ]
+    },
+    {
+      "atomType": "Add-BOM-Tag",
+      "x": 0.7,
+      "y": 0.5,
+      "uniqueID": "id-22122",
+      "name": "Add BOM Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Item Name",
+          "ioValue": "Wetlink Penetrator M10",
+          "currentEquation": "Wetlink Penetrator M10"
+        },
+        {
+          "name": "Number Needed",
+          "ioValue": 1
+        },
+        {
+          "name": "Cost (USD)",
+          "ioValue": 13
+        },
+        {
+          "name": "Source Link",
+          "ioValue": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/",
+          "currentEquation": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
+        }
+      ],
+      "BOMitem": {
+        "BOMitemName": "Wetlink Penetrator M10",
+        "numberNeeded": 1,
+        "costUSD": 13,
+        "source": "https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/"
+      }
     }
   ],
   "allConnectors": [
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-21901",
-      "ap2ID": "id-21877"
-    },
     {
       "ap2Name": "Shape 2",
       "ap1ID": "id-21991",
@@ -315,7 +311,7 @@
     {
       "ap2Name": "geometry",
       "ap1ID": "id-22043",
-      "ap2ID": "id-21901"
+      "ap2ID": "id-22122"
     },
     {
       "ap2Name": "Shape 3",
@@ -336,6 +332,11 @@
       "ap2Name": "geometry",
       "ap1ID": "id-22074",
       "ap2ID": "id-22066"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-22122",
+      "ap2ID": "id-21877"
     }
   ],
   "unitsKey": "Inches",
