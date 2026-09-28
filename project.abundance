@@ -119,12 +119,20 @@
       "uniqueID": "id-22001",
       "ioValues": [
         {
+          "name": "makeDisjoint",
+          "ioValue": true
+        },
+        {
           "name": "Shape 1",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
         },
         {
           "name": "Shape 2",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Shape3",
+          "ioValue": "__GEOMETRY_INPUT__"
         }
       ]
     },
@@ -161,16 +169,24 @@
       "uniqueID": "id-22043",
       "ioValues": [
         {
+          "name": "makeDisjoint",
+          "ioValue": true
+        },
+        {
           "name": "Shape 3",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
         },
         {
           "name": "Shape 4",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
         },
         {
           "name": "Shape 5",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Shape6",
+          "ioValue": "__GEOMETRY_INPUT__"
         }
       ]
     },
@@ -252,6 +268,11 @@
   ],
   "allConnectors": [
     {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-21901",
+      "ap2ID": "id-21877"
+    },
+    {
       "ap2Name": "Shape 2",
       "ap1ID": "id-21991",
       "ap2ID": "id-22001"
@@ -315,11 +336,6 @@
       "ap2Name": "geometry",
       "ap1ID": "id-22074",
       "ap2ID": "id-22066"
-    },
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-21901",
-      "ap2ID": "id-21877"
     }
   ],
   "unitsKey": "Inches",
